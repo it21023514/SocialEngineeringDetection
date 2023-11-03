@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Social Engineering Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+  </head>
+
+  <body>
+    <h1 class="title">Social Engineering Detection</h1>
+    <form method="POST" action="/predict">
+      <textarea
+        name="text"
+        rows="4"
+        cols="50"
+        class="text-input"
+        placeholder="Enter text here..."
+      ></textarea
+      ><br />
+      <input type="submit" value="Detect" class="submit-button" />
+    </form>
+
+    {% if result %}
+    <p class="result"><strong>Result:</strong> {{ result }}</p>
+    <p class="text"><strong>Text:</strong> {{ text }}</p>
+    {% endif %}
+  </body>
+</html>
